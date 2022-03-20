@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class MathLibTest {
+class MathLibTest {
     @Test
     @DisplayName("Caso general, x e y mayores de 0")
     void testCalcularMediaXMayor0YMayor0() {

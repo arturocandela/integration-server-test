@@ -6,7 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 @DisplayName("Comprobación unitaria de los métodos de Persona")
-public class PersonaTest {
+class PersonaTest {
 
     private final static String TestName = "Arturo";
     private final static String TestSurname = "Candela";
