@@ -37,4 +37,14 @@ public class PersonaTest {
 
     }
 
+    @Test
+    void testSetSurename() {
+
+        Persona p = new Persona(TestName, TestSurname);
+        String newSurname = "blabla" + TestName;
+
+        p.setSurename(newSurname);
+        assertEquals(newSurname,p.getSurename());
+
+    }
 }

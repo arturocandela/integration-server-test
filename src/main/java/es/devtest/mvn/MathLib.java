@@ -2,7 +2,7 @@ package es.devtest.mvn;
 
 public class MathLib {
 
-    public MathLib(){
+    private MathLib(){
 
     }
     
