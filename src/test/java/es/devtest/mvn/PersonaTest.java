@@ -1,0 +1,40 @@
+package es.devtest.mvn;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+@DisplayName("Comprobación unitaria de los métodos de Persona")
+public class PersonaTest {
+
+    private final static String TestName = "Arturo";
+    private final static String TestSurname = "Candela";
+
+    @Test
+    void testGetName() {
+
+        Persona p = new Persona(TestName, TestSurname);
+        assertEquals(TestName, p.getName());
+    }
+
+    @Test
+    void testGetSurename() {
+
+        Persona p = new Persona(TestName, TestSurname);
+        assertEquals(TestSurname, p.getSurename());
+
+    }
+
+    @Test
+    void testSetName() {
+
+        Persona p = new Persona(TestName, TestSurname);
+        String newName = "Art" + TestName;
+
+        p.setName(newName);
+        assertEquals(newName,p.getName());
+
+    }
+
+}
