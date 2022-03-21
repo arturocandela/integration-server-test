@@ -1,6 +1,6 @@
 package es.devtest.mvn;
 
-public class Libro {
+public class Libro implements Comparable {
 
     public Persona autor;
 
@@ -12,5 +12,13 @@ public class Libro {
     public Persona getAutor()
     {
         return autor;
+    }
+
+    public void setAutor(Persona autor) {
+        this.autor = autor;
+    }
+
+    public int compareTo(Object o) {
+        return 1;
     }
 }

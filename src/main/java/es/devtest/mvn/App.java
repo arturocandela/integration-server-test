@@ -27,6 +27,17 @@ public class App {
 
     public static void main(String[] args) {
         LOGGER.info("Starting the Program");
+
+        Persona p = new Persona("Arturo","Candela");
+
+        Libro l = new Libro(p);
+
+        l.autor = new Persona("Pepe","Carvajo");
+
+        l.compareTo(p);
+
+        System.out.println("El autor es: " + l.autor.getName());
+
         System.exit(0);
     }
 }
