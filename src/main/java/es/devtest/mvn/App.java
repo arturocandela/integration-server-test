@@ -1,25 +1,32 @@
 package es.devtest.mvn;
 
-import java.util.logging.ConsoleHandler;
-import java.util.logging.Level;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 /**
- * Hello world!
+ * Hello World application
+ * 
+ * @author Arturo Candela
  *
  */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-        
-        logger.setLevel(Level.FINE);
+public class App {
+    private static final Logger LOGGER;
 
-        ConsoleHandler consoleHandler = new ConsoleHandler();
+    static {
 
-        logger.addHandler(consoleHandler);
-        
-        logger.fine( "Hello World!" );
+        InputStream stream = App.class.getClassLoader().getResourceAsStream("logging.properties");
+        try {
+            LogManager.getLogManager().readConfiguration(stream);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        LOGGER = Logger.getLogger(App.class.getName());
+    }
+
+    public static void main(String[] args) {
+        LOGGER.info("Starting the Program");
+        System.exit(0);
     }
 }

@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Comprobación unitaria de los métodos de Persona")
+@DisplayName(" unitaria dels mètodes de Persona")
 class PersonaTest {
 
     private final static String TestName = "Arturo";

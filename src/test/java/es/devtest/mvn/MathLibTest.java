@@ -24,7 +24,7 @@ class MathLibTest {
     }
 
     @Test
-    @DisplayName("Caso expecion, x menor de 0 e y mayor de 0")
+    @DisplayName("Caso excepció, x menor de 0 e y mayor de 0")
     void testCalcularMediaXMenor0YMayor0(){
 
         float x = -5f;
@@ -38,7 +38,7 @@ class MathLibTest {
     }
 
     @Test
-    @DisplayName("Caso expecion, x mayor de 0 e y menor de 0")
+    @DisplayName("Caso excepció, x mayor de 0 e y menor de 0")
     void testCalcularMediaXMayor0YMenor0(){
 
         float x = 5f;
@@ -48,9 +48,5 @@ class MathLibTest {
         ()-> MathLib.calcularMedia(x, y));
 
     }
-
-
-    
-
     
 }

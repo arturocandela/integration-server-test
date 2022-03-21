@@ -1,4 +1,9 @@
 {
     "java.configuration.updateBuildConfiguration": "automatic",
-    "cSpell.language": "ca,en"
+    "cSpell.language": "ca,en",
+    "sonarlint.connectedMode.project": {
+        "projectKey": "primer-proyecto"
+    }
+
+
 }
