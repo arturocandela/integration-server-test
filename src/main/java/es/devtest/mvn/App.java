@@ -26,17 +26,14 @@ public class App {
     }
 
     public static void main(String[] args) {
+    	
         LOGGER.info("Starting the Program");
 
-        Persona p = new Persona("Arturo","Candela");
+        Autor arturo = new Autor("Arturo","Candela Moltó");
 
-        Libro l = new Libro(p);
+        Libro l = new Libro("La vesión inmantenible con Git",arturo);
 
-        l.autor = new Persona("Pepe","Carvajo");
-
-        l.compareTo(p);
-
-        System.out.println("El autor es: " + l.autor.getName());
+        LOGGER.info("El autor es: " + l.getAutor().getName());
 
         System.exit(0);
     }
