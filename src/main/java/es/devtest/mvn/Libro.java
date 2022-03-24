@@ -2,6 +2,13 @@ package es.devtest.mvn;
 
 import java.util.Objects;
 
+/**
+ * Esta clase modela un libro, se utiliza para relacionarla con la
+ * base de datos
+ * 
+ * @author Arturo Candela Moltó
+ *
+ */
 public class Libro implements Comparable<Libro> {
 
     private Autor autor;
@@ -17,6 +24,10 @@ public class Libro implements Comparable<Libro> {
 		return autor;
 	}
 
+    /**
+     * 
+     * @return String con el nombre del libro
+     */
 	public String getNombre() {
 		return titulo;
 	}

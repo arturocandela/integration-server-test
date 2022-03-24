@@ -6,7 +6,7 @@
 
   <groupId>es.devtest.mvn</groupId>
   <artifactId>primer-proyecto</artifactId>
-  <version>0.17</version>
+  <version>0.18</version>
 
   <name>primer-proyecto</name>
   <url>http://www.example.com</url>
@@ -32,9 +32,7 @@
 </dependency>
     
   </dependencies>
-
   
-
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
 	<plugins>
@@ -113,7 +111,6 @@
     </pluginManagement>
   </build>
   
-  
   <reporting>
     <plugins>
       <plugin>
@@ -121,7 +118,7 @@
         <artifactId>maven-javadoc-plugin</artifactId>
         <version>3.3.2</version>
         <configuration>
-          <show>public</show>
+          <show>protected</show>
         </configuration>
       </plugin>
     </plugins>
