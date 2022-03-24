@@ -35,6 +35,5 @@ public class App {
 
         LOGGER.info("El autor es: " + l.getAutor().getName());
 
-        System.exit(0);
     }
 }
