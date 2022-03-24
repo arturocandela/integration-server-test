@@ -6,7 +6,7 @@
 
   <groupId>es.devtest.mvn</groupId>
   <artifactId>primer-proyecto</artifactId>
-  <version>0.16</version>
+  <version>0.17</version>
 
   <name>primer-proyecto</name>
   <url>http://www.example.com</url>
@@ -37,8 +37,17 @@
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
-      <plugins>
-        <plugin>
+	<plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-javadoc-plugin</artifactId>
+			<version>3.3.2</version>
+			<configuration>
+				<show>private</show>
+          		<nohelp>true</nohelp>
+			</configuration>
+		</plugin>
+		<plugin>
           <groupId>org.jacoco</groupId>
           <artifactId>jacoco-maven-plugin</artifactId>
           <version>0.8.7</version>
@@ -103,4 +112,19 @@
       </plugins>
     </pluginManagement>
   </build>
+  
+  
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.3.2</version>
+        <configuration>
+          <show>public</show>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
+  
 </project>
