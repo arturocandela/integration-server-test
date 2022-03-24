@@ -10,7 +10,12 @@ package es.devtest.mvn;
  *
  */
 public class Autor extends Persona {
-	
+	/**
+	 * Creates a new author
+	 * 
+	 * @param nombre Name of the author
+	 * @param apellido Surname of the author
+	 */
 	public Autor(String nombre, String apellido) {
 		super( nombre, apellido );
 	}
