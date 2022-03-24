@@ -6,11 +6,4 @@ public class Autor extends Persona {
 		super( nombre, apellido );
 	}
 	
-	@Override
-	public String getName() {
-		
-		return "Lo que diga pepe";
-
-	}
-
 }
