@@ -1,50 +1,48 @@
 package es.devtest.mvn;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 @DisplayName("Prova unitaria dels mètodes d'autor")
 class AutorTest {
 
-    private final static String TestName = "Arturo";
+	private final static String TestName = "Arturo";
     private final static String TestSurname = "Candela";
 
+    private Persona p;
+    
+    @BeforeEach
+    void beforeEach() {
+    	p = new Autor(TestName, TestSurname);
+    }
+    
     @Test
     void testGetName() {
 
-        Persona p = new Autor(TestName, TestSurname);
-        assertEquals(TestName, p.getName());
+        TestPersonaHelper.testPersonaGetName(p, TestName, TestSurname);
     }
 
     @Test
     void testGetSurename() {
 
-        Persona p = new Autor(TestName, TestSurname);
-        assertEquals(TestSurname, p.getSurename());
+        
+        TestPersonaHelper.testPersonaGetSurename(p, TestName, TestSurname);
 
     }
 
     @Test
     void testSetName() {
 
-        Persona p = new Autor(TestName, TestSurname);
-        String newName = "Art" + TestName;
-
-        p.setName(newName);
-        assertEquals(newName,p.getName());
+        TestPersonaHelper.testPersonaSetName(p, TestName, TestSurname);
 
     }
 
     @Test
     void testSetSurename() {
 
-        Persona p = new Autor(TestName, TestSurname);
-        String newSurname = "blabla" + TestName;
-
-        p.setSurename(newSurname);
-        assertEquals(newSurname,p.getSurename());
+        TestPersonaHelper.testPersonaSetSurename(p, TestName, TestSurname);
 
     }
+
 }

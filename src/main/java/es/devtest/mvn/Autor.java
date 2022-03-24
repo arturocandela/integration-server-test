@@ -5,12 +5,5 @@ public class Autor extends Persona {
 	public Autor(String nombre, String apellido) {
 		super( nombre, apellido );
 	}
-	
-	@Override
-	public String getName() {
-		
-		return "Lo que diga pepe";
-
-	}
 
 }
