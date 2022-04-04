@@ -6,7 +6,7 @@
 
   <groupId>es.devtest.mvn</groupId>
   <artifactId>primer-proyecto</artifactId>
-  <version>0.18</version>
+  <version>0.19</version>
 
   <name>primer-proyecto</name>
   <url>http://www.example.com</url>
@@ -29,7 +29,7 @@
 	    <artifactId>mockito-core</artifactId>
 	    <version>4.4.0</version>
 	    <scope>test</scope>
-</dependency>
+	</dependency>
     
   </dependencies>
   
@@ -122,6 +122,7 @@
         </configuration>
       </plugin>
     </plugins>
+    
   </reporting>
   
 </project>
