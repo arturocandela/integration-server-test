@@ -1,20 +1,20 @@
 package es.devtest.mvn;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
 /**
- * Unit test for simple App.
+ * Test the main app 
+ * 
+ * @author arturo
+ *
  */
-public class AppTest 
-{
-    /**
-     * Rigorous Test :-)
-     */
-    @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
-    }
+class AppTest {
+
+	@Test
+	void testMain() {
+		assertDoesNotThrow( () -> App.main(null));
+	}
+
 }

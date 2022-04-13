@@ -4,17 +4,17 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName(" unitaria dels mètodes de Persona")
-class PersonaTest {
+@DisplayName("Prova unitaria dels mètodes d'autor")
+class AutorTest {
 
-    private final static String TestName = "Arturo";
+	private final static String TestName = "Arturo";
     private final static String TestSurname = "Candela";
 
     private Persona p;
     
     @BeforeEach
     void beforeEach() {
-    	p = new Persona(TestName, TestSurname);
+    	p = new Autor(TestName, TestSurname);
     }
     
     @Test
@@ -44,4 +44,5 @@ class PersonaTest {
         TestPersonaHelper.testPersonaSetSurename(p, TestName, TestSurname);
 
     }
+
 }
