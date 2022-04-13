@@ -14,14 +14,15 @@ class MathLibTest {
 	private static final double DELTA = 1e-15;
 	
     @Test
-    @DisplayName("Caso general, x e y mayores de 0")
+    @DisplayName("CalcularMedia - Caso general, x e y mayores de 0")
     void testCalcularMediaXMayor0YMayor0() {
 
         float x = 10f;
         float y = 15f;
+        float expected = 12.5f;
 
         try{
-            assertEquals((x+y)/2, MathLib.calcularMedia(x, y));
+            assertEquals(expected, MathLib.calcularMedia(x, y));
         } catch (ParameterUnderZeroException e){
             fail(e.getLocalizedMessage());
         }
@@ -29,7 +30,7 @@ class MathLibTest {
     }
 
     @Test
-    @DisplayName("Caso excepció, x menor de 0 e y mayor de 0")
+    @DisplayName("CalcularMedia - Caso excepción, x menor de 0 e y mayor de 0")
     void testCalcularMediaXMenor0YMayor0(){
 
         float x = -5f;
@@ -43,7 +44,7 @@ class MathLibTest {
     }
 
     @Test
-    @DisplayName("Caso excepció, x mayor de 0 e y menor de 0")
+    @DisplayName("CalcularMedia - Caso excepción, x mayor de 0 e y menor de 0")
     void testCalcularMediaXMayor0YMenor0(){
 
         float x = 5f;
@@ -60,7 +61,9 @@ class MathLibTest {
     			"4,2,3,4",
     			"4,3,2,4"})               
     void testMajorDe3(int expected, int a, int b, int c) {
+
     	assertEquals(expected, MathLib.majorDeTres(a, b, c));
+
     }
     
     @ParameterizedTest
@@ -72,8 +75,19 @@ class MathLibTest {
     	        "2,%,6,4",
     	        "0,SUM,6,4"})
     void testDoOperation(double expected, String operation, double param1, double param2) {
+
     	assertEquals(expected,MathLib.doOperation(param1, param2, operation),DELTA);
     	
     }
-    
+
+    @Test
+    void average() {
+        fail("Test Not Implemented");
+    }
+
+    @Test
+    void countVowels() {
+        fail("Test Not Implemented");
+    }
+
 }
