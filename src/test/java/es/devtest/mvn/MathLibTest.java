@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -82,12 +83,23 @@ class MathLibTest {
 
     @Test
     void average() {
+
         fail("Test Not Implemented");
+
     }
 
-    @Test
-    void countVowels() {
-        fail("Test Not Implemented");
+    @ParameterizedTest(name = "CountWovels of ''{1}'' is ''{0}''")
+    @DisplayName("CountVowels - Pruebas de Caja Blanca")
+    @CsvSource(value = {"1,a",
+                "1,e",
+                "1,i",
+                "1,o",
+                "1,u",
+                "0,k",
+                "0,null"},
+                nullValues = {"null"})
+    void countVowels(int expected, String sentence) {
+        assertEquals(expected,MathLib.countVowels(sentence));
     }
 
 }
