@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.converter.ConvertWith;
 import org.junit.jupiter.params.provider.CsvSource;
 
 class MathLibTest {
@@ -82,10 +83,9 @@ class MathLibTest {
     }
 
     @Test
-    void average() {
-
-        fail("Test Not Implemented");
-
+    @Disabled
+    void average(){
+        fail("No Implementado");
     }
 
     @ParameterizedTest(name = "CountWovels of ''{1}'' is ''{0}''")
@@ -96,6 +96,7 @@ class MathLibTest {
                 "1,o",
                 "1,u",
                 "0,k",
+                "0,''",
                 "0,null"},
                 nullValues = {"null"})
     void countVowels(int expected, String sentence) {
