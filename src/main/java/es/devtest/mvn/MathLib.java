@@ -1,7 +1,5 @@
 package es.devtest.mvn;
 
-import javax.naming.OperationNotSupportedException;
-
 public class MathLib {
 
     private MathLib(){
