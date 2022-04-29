@@ -2,7 +2,11 @@ package es.devtest.mvn;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertThrowsExactly;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
+
+import javax.naming.OperationNotSupportedException;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
@@ -68,24 +72,56 @@ class MathLibTest {
 
     }
     
+    @DisplayName("doOperation - Operaciones Exceptuando las que no existen/ denominador mayor que 0")
     @ParameterizedTest
     @CsvSource({"10,+,6,4",
     	        "2,-,6,4",
     	        "24,*,6,4",
     	        "1.5,/,6,4",
     	        "1296,^,6,4",
-    	        "2,%,6,4",
-    	        "0,SUM,6,4"})
+    	        "2,%,6,4"})
     void testDoOperation(double expected, String operation, double param1, double param2) {
 
     	assertEquals(expected,MathLib.doOperation(param1, param2, operation),DELTA);
     	
     }
 
+    @DisplayName("doOperation - Operación que no existe")
+    @ParameterizedTest
+    @CsvSource({"10,SUM,6,4"})
+    void testDoOperationThatDoesntExist(double expected, String operation, double param1, double param2) {
+
+    	assertThrows(UnsupportedOperationException.class,
+            ()->{
+                MathLib.doOperation(param1, param2, operation);
+            });
+    	
+    }
+
     @Test
-    @Disabled
-    void average(){
-        fail("No Implementado");
+    @DisplayName( "Average - Of a NULL int Array should rise NullPointerException" )
+    void averageofNullIntArray(){
+        assertThrowsExactly(NullPointerException.class,
+         ()->{
+            MathLib.average(null);
+         });
+    }
+
+    @Test
+    @DisplayName( "Average - Of an EMPTY int Array should return NaN" )
+    void averageofEmptyIntArray(){
+
+        double actual = MathLib.average(new int[0]);
+        assertTrue(Double.isNaN(actual)); 
+    }
+
+    @Test
+    @DisplayName( "Average - Of an Element int Array should return the element" )
+    void averageofOneElementIntArray(){
+
+        double expected = 1;
+        double actual = MathLib.average(new int[]{(int)expected});
+        assertEquals(expected, actual);; 
     }
 
     @ParameterizedTest(name = "CountWovels of ''{1}'' is ''{0}''")
