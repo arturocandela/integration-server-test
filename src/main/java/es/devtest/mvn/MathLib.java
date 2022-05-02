@@ -33,7 +33,7 @@ public class MathLib {
     	}
     }
     
-    public static double doOperation( double op1, double op2, String operation) {
+    public static double doOperation( double op1, double op2, String operation)  {
     	
     	double result = 0;
     	
@@ -57,7 +57,8 @@ public class MathLib {
     	case "%":
     		result = op1 % op2;
     		break;
-    		
+    	default:
+			throw new UnsupportedOperationException();
     	}
     	
     	return result;
