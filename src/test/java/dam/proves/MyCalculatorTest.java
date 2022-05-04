@@ -2,10 +2,9 @@ package dam.proves;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
-
-import java.nio.channels.MulticastChannel;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -37,11 +36,15 @@ class MyCalculatorTest {
 
     }
 
-    @Test
-    void addWhenNegativeThrowsException()
+    @ParameterizedTest
+    @CsvSource({
+        "-3,1",
+        "3,-1"
+    })
+    void addWhenNegativeThrowsException(int a, int b)
     {
         assertThrowsExactly(IllegalArgumentException.class,()->{
-            myCalculator.add(-3,-1);
+            myCalculator.add(a,b);
         });
     }
 
@@ -53,11 +56,15 @@ class MyCalculatorTest {
 
     }
 
-    @Test
-    void subWhenNegativeThrowsException()
+    @ParameterizedTest
+    @CsvSource({
+        "-3,1",
+        "3,-1"
+    })
+    void subWhenNegativeThrowsException(int a, int b)
     {
         assertThrowsExactly(IllegalArgumentException.class,()->{
-            myCalculator.sub(-3,-1);
+            myCalculator.sub(a,b);
         });
     }
 
@@ -70,14 +77,17 @@ class MyCalculatorTest {
 
     }
 
-    @Test
-    void mulWhenNegativeThrowsException()
+    @ParameterizedTest
+    @CsvSource({
+        "-3,1",
+        "3,-1"
+    })
+    void mulWhenNegativeThrowsException(int a, int b)
     {
         assertThrowsExactly(IllegalArgumentException.class,()->{
             myCalculator.mult(-3,-1);
         });
     }
-
 
     @Test
     void div() {
@@ -86,11 +96,15 @@ class MyCalculatorTest {
         assertEquals(expected,myCalculator.div(15,3));
     }
 
-    @Test
-    void divWhenNegativeThrowsException()
+    @ParameterizedTest
+    @CsvSource({
+        "-3,1",
+        "3,-1"
+    })
+    void divWhenNegativeThrowsException(int a, int b)
     {
         assertThrowsExactly(IllegalArgumentException.class,()->{
-            myCalculator.div(-3,-1);
+            myCalculator.div(a,b);
         });
     }
 

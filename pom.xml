@@ -6,7 +6,7 @@
 
   <groupId>es.devtest.mvn</groupId>
   <artifactId>primer-proyecto</artifactId>
-  <version>0.25</version>
+  <version>0.26</version>
 
   <name>integration-server-test</name>
   <url>https://github.com/arturocandela/integration-server-test</url>
