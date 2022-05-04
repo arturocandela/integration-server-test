@@ -41,7 +41,7 @@ class MyCalculatorTest {
     void addWhenNegativeThrowsException()
     {
         assertThrowsExactly(IllegalArgumentException.class,()->{
-            myCalculator.add(3,-1);
+            myCalculator.add(-3,-1);
         });
     }
 
@@ -57,7 +57,7 @@ class MyCalculatorTest {
     void subWhenNegativeThrowsException()
     {
         assertThrowsExactly(IllegalArgumentException.class,()->{
-            myCalculator.sub(3,-1);
+            myCalculator.sub(-3,-1);
         });
     }
 
@@ -66,7 +66,7 @@ class MyCalculatorTest {
     void mult() {
 
         int expected = 15;
-        assertEquals(expected,myCalculator.mult(3,5));
+        assertEquals(expected,myCalculator.mult(-3,5));
 
     }
 
@@ -74,7 +74,7 @@ class MyCalculatorTest {
     void mulWhenNegativeThrowsException()
     {
         assertThrowsExactly(IllegalArgumentException.class,()->{
-            myCalculator.mult(3,-1);
+            myCalculator.mult(-3,-1);
         });
     }
 
@@ -90,7 +90,7 @@ class MyCalculatorTest {
     void divWhenNegativeThrowsException()
     {
         assertThrowsExactly(IllegalArgumentException.class,()->{
-            myCalculator.div(3,-1);
+            myCalculator.div(-3,-1);
         });
     }
 
