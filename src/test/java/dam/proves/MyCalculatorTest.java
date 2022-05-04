@@ -2,7 +2,6 @@ package dam.proves;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
@@ -15,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class MyCalculatorTest {
 
     MyCalculator myCalculator;
+    private static final String INPUT_ARGUMENTS_MUST_BE_GREATER_THAN_0 = "Input arguments must be greater than 0";
 
     @BeforeEach
     void setUpMyCalculator()
@@ -46,9 +46,10 @@ class MyCalculatorTest {
     })
     void addWhenNegativeThrowsException(int a, int b)
     {
-        assertThrowsExactly(IllegalArgumentException.class,()->{
+        IllegalArgumentException e = assertThrowsExactly(IllegalArgumentException.class,()->{
             myCalculator.add(a,b);
         });
+        assertEquals(INPUT_ARGUMENTS_MUST_BE_GREATER_THAN_0, e.getMessage());
     }
 
     @Test
@@ -66,9 +67,10 @@ class MyCalculatorTest {
     })
     void subWhenNegativeThrowsException(int a, int b)
     {
-        assertThrowsExactly(IllegalArgumentException.class,()->{
+        IllegalArgumentException e = assertThrowsExactly(IllegalArgumentException.class,()->{
             myCalculator.sub(a,b);
         });
+        assertEquals(INPUT_ARGUMENTS_MUST_BE_GREATER_THAN_0, e.getMessage());
     }
 
 
@@ -87,9 +89,10 @@ class MyCalculatorTest {
     })
     void mulWhenNegativeThrowsException(int a, int b)
     {
-        assertThrowsExactly(IllegalArgumentException.class,()->{
+        IllegalArgumentException e = assertThrowsExactly(IllegalArgumentException.class,()->{
             myCalculator.mult(a,b);
         });
+        assertEquals(INPUT_ARGUMENTS_MUST_BE_GREATER_THAN_0, e.getMessage());
     }
 
     @Test
@@ -106,9 +109,10 @@ class MyCalculatorTest {
     })
     void divWhenNegativeThrowsException(int a, int b)
     {
-        assertThrowsExactly(IllegalArgumentException.class,()->{
+        IllegalArgumentException e = assertThrowsExactly(IllegalArgumentException.class,()->{
             myCalculator.div(a,b);
         });
+        assertEquals(INPUT_ARGUMENTS_MUST_BE_GREATER_THAN_0, e.getMessage());
     }
 
 
