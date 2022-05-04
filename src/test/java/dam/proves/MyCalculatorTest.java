@@ -66,7 +66,7 @@ class MyCalculatorTest {
     void mult() {
 
         int expected = 15;
-        assertEquals(expected,myCalculator.mult(-3,5));
+        assertEquals(expected,myCalculator.mult(3,5));
 
     }
 
