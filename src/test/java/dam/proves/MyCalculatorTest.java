@@ -85,7 +85,7 @@ class MyCalculatorTest {
     void mulWhenNegativeThrowsException(int a, int b)
     {
         assertThrowsExactly(IllegalArgumentException.class,()->{
-            myCalculator.mult(-3,-1);
+            myCalculator.mult(a,b);
         });
     }
 
