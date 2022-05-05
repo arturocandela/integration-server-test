@@ -6,10 +6,10 @@
 
   <groupId>es.devtest.mvn</groupId>
   <artifactId>primer-proyecto</artifactId>
-  <version>0.23</version>
+  <version>0.26</version>
 
-  <name>primer-proyecto</name>
-  <url>http://www.example.com</url>
+  <name>integration-server-test</name>
+  <url>https://github.com/arturocandela/integration-server-test</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -34,7 +34,7 @@
   </dependencies>
   
   <build>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (maybe moved to parent pom) -->
 	<plugins>
 		<plugin>
 			<groupId>org.apache.maven.plugins</groupId>

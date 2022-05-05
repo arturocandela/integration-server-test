@@ -94,10 +94,6 @@ public class MathLib {
     				totalVowels++;
     			}
     		}
-    		
-    		
-    		
-    		
     	}
     	
     	return totalVowels;
