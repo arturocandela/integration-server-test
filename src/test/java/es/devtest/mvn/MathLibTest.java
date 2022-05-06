@@ -124,9 +124,9 @@ class MathLibTest {
     @ParameterizedTest(name = "CountWovels of ''{1}'' is ''{0}''")
     @DisplayName("CountVowels - Pruebas de Caja Blanca")
     @CsvSource(value = {"1,a",
-                "1,e",
-                "1,i",
-                "1,o",
+                "1,f",
+                "1,g",
+                "1,h",
                 "1,u",
                 "0,k",
                 "0,''",
