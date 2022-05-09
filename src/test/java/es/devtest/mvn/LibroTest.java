@@ -9,6 +9,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import java.util.NoSuchElementException;
+
 class LibroTest {
 
 	String tituloLibro = "Nombre del Libro";
@@ -53,6 +55,24 @@ class LibroTest {
 		l.removeAuthor(autor);
 		verify(autor,times(1)).removeLibro(l);
 		assertEquals(0,l.getAuthorsCount());
+
+	}
+
+	@Test
+	void testRemoveAnInexistentAutor() {
+
+		Autor autor = Mockito.mock(Autor.class);
+		Autor autor2 = Mockito.mock(Autor.class);
+
+		l.addAutor(autor);
+		verify(autor,times(1)).addLibro(l);
+		assertEquals(1,l.getAuthorsCount());
+
+		assertThrowsExactly(NoSuchElementException.class,()->{
+			l.removeAuthor(autor2);
+		});
+
+		verify(autor,times(0)).removeLibro(l);
 
 	}
 
