@@ -142,10 +142,10 @@ class LibroTest {
 		//Comprobamos el orden
 		Autor autoresOrdenados[] = l.getAutorSortedByName();
 
-		assertEquals(autor3.getName(),autores[0].getName());
-		assertEquals(autor1.getName(),autores[1].getName());
-		assertEquals(autor2.getName(),autores[2].getName());
-		assertEquals(autor0.getName(),autores[3].getName());
+		assertEquals(autor3.getName(),autoresOrdenados[0].getName());
+		assertEquals(autor1.getName(),autoresOrdenados[1].getName());
+		assertEquals(autor2.getName(),autoresOrdenados[2].getName());
+		assertEquals(autor0.getName(),autoresOrdenados[3].getName());
 
 
 
