@@ -16,7 +16,7 @@ public abstract class Autor extends Persona {
 	 * @param nombre Name of the author
 	 * @param apellido Surname of the author
 	 */
-	public Autor(String nombre, String apellido) {
+	protected Autor(String nombre, String apellido) {
 		super( nombre, apellido );
 	}
 

@@ -43,7 +43,6 @@ class LibroTest {
 		assertEquals(autor,l.getAutors()[0]);
 	}
 
-
 	@Test
 	void testRemoveOneAutor() {
 
@@ -57,6 +56,29 @@ class LibroTest {
 
 	}
 
+	@Test
+	void testCannotAddMoreThanFiveAuthors(){
+
+		Autor[] autors = new Autor[6];
+
+		//Generamos 6 autores
+		for (int i = 0; i < 6; i++) {
+			autors[i] = Mockito.mock(Autor.class);
+		}
+
+		//Agregamos 5
+		for (int i = 0; i < 5; i++) {
+			l.addAutor(autors[i]);
+		}
+
+		//Comprobamos que funciona
+		assertEquals(5,l.getAuthorsCount());
+
+		assertThrowsExactly(MaximumNumbersOfAuthorsAlreadyReached.class,()->{
+			l.addAutor(autors[5]);
+		});
+
+	}
 
 	@Test
 	void testGetNombre() {
