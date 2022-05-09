@@ -1,48 +1,49 @@
+/*
+ * Copyright 2022 Conselleria d'Educació Cultura i Esport
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package es.devtest.mvn;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Prova unitaria dels mètodes d'autor")
+import static org.junit.jupiter.api.Assertions.*;
+
 class AutorTest {
 
-	private final static String TestName = "Arturo";
-    private final static String TestSurname = "Candela";
-
-    private Persona p;
-    
-    @BeforeEach
-    void beforeEach() {
-    	p = new Autor(TestName, TestSurname);
-    }
-    
     @Test
-    void testGetName() {
+    void createAuthor() {
 
-        TestPersonaHelper.testPersonaGetName(p, TestName, TestSurname);
-    }
+        String nombre = "Pepe";
+        String apellido = "Gómez";
 
-    @Test
-    void testGetSurename() {
+        Persona autor = new Autor(nombre, apellido) {
 
-        
-        TestPersonaHelper.testPersonaGetSurename(p, TestName, TestSurname);
+            @Override
+            public void addLibro(Libro libro) {
+                //Mocked only to test the constructor
+            }
 
-    }
+            @Override
+            public void removeLibro(Libro libro) {
+                //Mocked only to test the constructor
+            }
+        };
 
-    @Test
-    void testSetName() {
+        assertEquals(nombre,autor.getName());
+        assertEquals(apellido,autor.getSurename());
 
-        TestPersonaHelper.testPersonaSetName(p, TestName, TestSurname);
-
-    }
-
-    @Test
-    void testSetSurename() {
-
-        TestPersonaHelper.testPersonaSetSurename(p, TestName, TestSurname);
 
     }
-
 }
