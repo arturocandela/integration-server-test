@@ -27,7 +27,7 @@
     <dependency>
 	    <groupId>org.mockito</groupId>
 	    <artifactId>mockito-core</artifactId>
-	    <version>4.4.0</version>
+	    <version>4.5.1</version>
 	    <scope>test</scope>
 	</dependency>
     
@@ -36,15 +36,6 @@
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (maybe moved to parent pom) -->
 	<plugins>
-		<plugin>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-javadoc-plugin</artifactId>
-			<version>3.3.2</version>
-			<configuration>
-				<show>private</show>
-          		<nohelp>true</nohelp>
-			</configuration>
-		</plugin>
 		<plugin>
           <groupId>org.jacoco</groupId>
           <artifactId>jacoco-maven-plugin</artifactId>
@@ -110,19 +101,4 @@
       </plugins>
     </pluginManagement>
   </build>
-  
-  <reporting>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>3.3.2</version>
-        <configuration>
-          <show>protected</show>
-        </configuration>
-      </plugin>
-    </plugins>
-    
-  </reporting>
-  
 </project>
