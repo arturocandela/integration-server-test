@@ -1,8 +1,7 @@
 package es.devtest.mvn;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.*;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -111,4 +110,44 @@ class LibroTest {
 		
 	}
 
+	@Test
+	void getAutorSortedByName() {
+
+		Autor autor0 = Mockito.mock(Autor.class);
+		when(autor0.getName()).thenReturn("Pepe");
+
+		Autor autor1 = Mockito.mock(Autor.class);
+		when(autor1.getName()).thenReturn("Jose");
+
+		Autor autor2 = Mockito.mock(Autor.class);
+		when(autor2.getName()).thenReturn("jose");
+
+		Autor autor3 = Mockito.mock(Autor.class);
+		when(autor3.getName()).thenReturn("angel");
+
+		l.addAutor(autor0);
+		l.addAutor(autor1);
+		l.addAutor(autor2);
+		l.addAutor(autor3);
+
+		//Comprobamos que se devuelve sin orden
+
+		Autor autores[] = l.getAutors();
+
+		assertEquals(autor0,autores[0]);
+		assertEquals(autor1,autores[1]);
+		assertEquals(autor2,autores[2]);
+		assertEquals(autor3,autores[3]);
+
+		//Comprobamos el orden
+		Autor autoresOrdenados[] = l.getAutorSortedByName();
+
+		assertEquals(autor3.getName(),autores[0].getName());
+		assertEquals(autor1.getName(),autores[1].getName());
+		assertEquals(autor2.getName(),autores[2].getName());
+		assertEquals(autor0.getName(),autores[3].getName());
+
+
+
+	}
 }

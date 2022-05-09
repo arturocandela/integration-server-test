@@ -1,8 +1,6 @@
 package es.devtest.mvn;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 /**
  * Esta clase modela un libro, se utiliza para relacionarla con la
@@ -71,10 +69,30 @@ public class Libro {
         return autors.size();
     }
 
-    public Object[] getAutors() {
+    public Autor[] getAutors() {
 
         Autor[] array = new Autor[autors.size()];
         return autors.toArray(array);
+
+    }
+
+    /**
+     * Obtiene los autores ordenados por su nombre de pila
+     *
+     * @return El vector con los nombres de los autores ordenado por nombre
+     */
+    public Autor[] getAutorSortedByName()
+    {
+        Autor[] autors = getAutors();
+
+        Arrays.sort(autors, new Comparator<Autor>() {
+            @Override
+            public int compare(Autor o1, Autor o2) {
+                return o2.getName().compareTo(o1.getName());
+            }
+        });
+
+        return autors;
 
     }
 
