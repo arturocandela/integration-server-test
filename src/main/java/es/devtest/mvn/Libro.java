@@ -1,6 +1,8 @@
 package es.devtest.mvn;
 
-import java.util.Objects;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.NoSuchElementException;
 
 /**
  * Esta clase modela un libro, se utiliza para relacionarla con la
@@ -9,63 +11,67 @@ import java.util.Objects;
  * @author Arturo Candela Moltó
  *
  */
-public class Libro implements Comparable<Libro> {
+public class Libro {
 
-    private Autor autor;
+    private List<Autor> autors = new ArrayList<>();
     private String titulo;
+
     
-    public Libro( String titulo, Autor autor)
+    public Libro( String titulo)
     {
-        this.autor = autor;
         this.titulo = titulo;
+
     }
-    
-    public Persona getAutor() {
-		return autor;
-	}
 
     /**
      * 
-     * @return String con el nombre del libro
+     * @return String con el título del libro
      */
-	public String getNombre() {
+	public String getTitulo() {
 		return titulo;
 	}
 
-	@Override
-    public int compareTo(Libro o) {
-       
-    	if ( equals(o)) {
-    		
-    		return 0;
-    		
-    	} else {
-    		return titulo.compareToIgnoreCase(o.titulo);
-    	}
-    	
+    /**
+     * Agrega un autor como autor del libro
+     *
+     * @param autor Autor a Agregar
+     * @exception MaximumNumbersOfAuthorsAlreadyReached Si se agregan más de 5 autores
+     */
+	public void addAutor(Autor autor) {
+
+        if (autors.size() == 5 ){
+            throw new MaximumNumbersOfAuthorsAlreadyReached();
+        }
+        autors.add(autor);
+	}
+
+    /**
+     * Elimina un autor del array
+     * @param autor Autor a eliminar
+     * @exception NoSuchElementException En el caso de que no se encuentre el autor
+     */
+    public void removeAuthor(Autor autor){
+
+        if (!autors.remove(autor)){
+            throw new NoSuchElementException();
+        }
+
     }
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(autor, titulo);
-	}
+    /**
+     * Obtiene la cantidad de autores que tiene este libro
+     *
+     * @return el número de autores del libro
+     */
+    public int getAuthorsCount() {
+        return autors.size();
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Libro other = (Libro) obj;
-		return Objects.equals(autor, other.autor) && Objects.equals(titulo, other.titulo);
-	}
-    
-    
-    
-    
-    
+    public Object[] getAutors() {
 
+        Autor[] array = new Autor[autors.size()];
+        return autors.toArray(array);
+
+    }
 
 }

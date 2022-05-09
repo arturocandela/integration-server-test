@@ -4,7 +4,7 @@ package es.devtest.mvn;
  *
  * Class Author, models a Person
  * <p>
- * This class is a POO
+ * This class represents an Author that can have books
  * 
  * @author arturo
  *
@@ -18,6 +18,12 @@ public class Autor extends Persona {
 	 */
 	public Autor(String nombre, String apellido) {
 		super( nombre, apellido );
+	}
+
+	public void addLibro(Libro libro){
+
+
+
 	}
 	
 }
