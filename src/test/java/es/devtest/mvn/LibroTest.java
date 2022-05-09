@@ -1,6 +1,8 @@
 package es.devtest.mvn;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -36,17 +38,21 @@ class LibroTest {
 		Autor autor = Mockito.mock(Autor.class);
 
 		l.addAutor(autor);
+		verify(autor,times(1)).addLibro(l);
 		assertEquals(1,l.getAuthorsCount());
 		assertEquals(autor,l.getAutors()[0]);
 	}
+
 
 	@Test
 	void testRemoveOneAutor() {
 
 		Autor autor = Mockito.mock(Autor.class);
 		l.addAutor(autor);
+		verify(autor,times(1)).addLibro(l);
 		assertEquals(1,l.getAuthorsCount());
 		l.removeAuthor(autor);
+		verify(autor,times(1)).removeLibro(l);
 		assertEquals(0,l.getAuthorsCount());
 
 	}

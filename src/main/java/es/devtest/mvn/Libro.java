@@ -43,6 +43,7 @@ public class Libro {
             throw new MaximumNumbersOfAuthorsAlreadyReached();
         }
         autors.add(autor);
+        autor.addLibro(this);
 	}
 
     /**
@@ -52,7 +53,10 @@ public class Libro {
      */
     public void removeAuthor(Autor autor){
 
-        if (!autors.remove(autor)){
+
+        if (autors.remove(autor)){
+            autor.removeLibro(this);
+        } else {
             throw new NoSuchElementException();
         }
 

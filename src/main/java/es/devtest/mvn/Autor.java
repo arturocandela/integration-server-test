@@ -9,7 +9,7 @@ package es.devtest.mvn;
  * @author arturo
  *
  */
-public class Autor extends Persona {
+public abstract class Autor extends Persona {
 	/**
 	 * Creates a new author
 	 * 
@@ -20,10 +20,15 @@ public class Autor extends Persona {
 		super( nombre, apellido );
 	}
 
-	public void addLibro(Libro libro){
+	/**
+	 * Método para agregar un libro escrito por el Autor
+	 * @param libro libro a Agregar
+	 */
+	public abstract void addLibro(Libro libro);
 
-
-
-	}
-	
+	/**
+	 * Método para eliminar un libro escrito por el autor
+	 * @param libro Libro a eliminar
+	 */
+	public abstract void removeLibro(Libro libro);
 }
