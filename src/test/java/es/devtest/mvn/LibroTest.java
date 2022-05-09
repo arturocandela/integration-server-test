@@ -30,7 +30,7 @@ class LibroTest {
 	@Test
 	void createLibro() {
 
-		assertNull(l);
+		assertNotNull(l);
 	
 	}
 
