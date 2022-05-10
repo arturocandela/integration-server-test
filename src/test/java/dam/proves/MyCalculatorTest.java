@@ -17,18 +17,13 @@ class MyCalculatorTest {
     private static final String INPUT_ARGUMENTS_MUST_BE_GREATER_THAN_0 = "Input arguments must be greater than 0";
 
     @BeforeEach
-    void setUpMyCalculator()
-    {
+    void setUpMyCalculator() {
         myCalculator = new MyCalculator();
-        System.out.println("MyCalculator created");
     }
 
     @AfterEach
     void tearDownMyCalculator(){
-
         myCalculator = null;
-        System.out.println("MyCalculator=null");
-
     }
 
     @Test
