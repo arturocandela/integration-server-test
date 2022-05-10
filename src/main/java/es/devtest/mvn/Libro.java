@@ -14,7 +14,11 @@ public class Libro {
     private List<Autor> autors = new ArrayList<>();
     private String titulo;
 
-    
+
+    /**
+     * Devuelve un nuevo objeto de tipo Libro
+     * @param titulo String con el título del Libro
+     */
     public Libro( String titulo)
     {
         this.titulo = titulo;
@@ -51,7 +55,6 @@ public class Libro {
      */
     public void removeAuthor(Autor autor){
 
-
         if (autors.remove(autor)){
             autor.removeLibro(this);
         } else {
@@ -62,13 +65,16 @@ public class Libro {
 
     /**
      * Obtiene la cantidad de autores que tiene este libro
-     *
      * @return el número de autores del libro
      */
     public int getAuthorsCount() {
         return autors.size();
     }
 
+    /**
+     * Obtiene todos los autores del Libro
+     * @return Un Array con todos los autores del Libro
+     */
     public Autor[] getAutors() {
 
         Autor[] array = new Autor[autors.size()];
@@ -77,9 +83,8 @@ public class Libro {
     }
 
     /**
-     * Obtiene los autores ordenados por su nombre de pila
-     *
-     * @return El vector con los nombres de los autores ordenado por nombre
+     * Obtiene todos los autores ordenaos alfabéticamente por nombre del Libro
+     * @return un Array con todos los autores del Libro ordenados alfabéticamente
      */
     public Autor[] getAutorSortedByName()
     {
