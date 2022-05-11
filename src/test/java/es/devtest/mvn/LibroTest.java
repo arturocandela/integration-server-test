@@ -21,10 +21,6 @@ class LibroTest {
 		l = new Libro(tituloLibro);
 	}
 
-	@AfterEach
-	void tearDown(){
-		l = null;
-	}
 
 	@Test
 	void createLibro() {
