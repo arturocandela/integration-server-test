@@ -88,16 +88,13 @@ public class Libro {
      */
     public Autor[] getAutorSortedByName()
     {
-        Autor[] autors = getAutors();
+        Autor[] autorsArray = getAutors();
 
-        Arrays.sort(autors, new Comparator<Autor>() {
-            @Override
-            public int compare(Autor o1, Autor o2) {
-                return o1.getName().compareToIgnoreCase(o2.getName());
-            }
-        });
+        Arrays.sort(autorsArray,
 
-        return autors;
+                (o1, o2) -> o1.getName().compareToIgnoreCase(o2.getName()));
+
+        return autorsArray;
 
     }
 
