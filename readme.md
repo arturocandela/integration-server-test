@@ -86,4 +86,6 @@ A la hora de redactar el manual la última versión era la 4.5.1
 
 Una vez agregada ya tendremos disponibles todos los paquetes relacionados con la clase.
 
-Revision de los tests
+## Revision de los tests
+
+Es necesario revisar el código de los tests
