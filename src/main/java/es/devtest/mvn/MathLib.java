@@ -72,6 +72,10 @@ public class MathLib {
     	case "%":
     		result = op1 % op2;
     		break;
+                
+        default:
+			throw new UnsupportedOperationException();   
+                
     	}
     	
     	return result;
